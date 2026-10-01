@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>سياسة الخصوصية — اصرفلي 🛒</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Cairo', Tahoma, sans-serif;
+            background: linear-gradient(135deg, #fff8f0 0%, #ffefd9 50%, #ffe4c4 100%);
+            min-height: 100vh;
+            color: #3a3a3a;
+            line-height: 2;
+        }
+
+        /* ===== الهيدر المتدرج المتحرك ===== */
+        .hero {
+            background: linear-gradient(135deg, #ff9800, #f57c00, #e65100);
+            background-size: 300% 300%;
+            animation: gradientShift 8s ease infinite;
+            color: #fff;
+            text-align: center;
+            padding: 70px 20px 90px;
+            border-radius: 0 0 60px 60px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(230, 81, 0, 0.35);
+        }
+
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .hero .cart-icon {
+            font-size: 70px;
+            background: rgba(255,255,255,0.25);
+            width: 130px; height: 130px;
+            display: flex; align-items: center; justify-content: center;
+            border-radius: 50%;
+            margin: 0 auto 25px;
+            animation: float 3s ease-in-out infinite;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-12px); }
+        }
+
+        .hero h1 {
+            font-size: 2.6em;
+            font-weight: 900;
+            text-shadow: 0 3px 15px rgba(0,0,0,0.2);
+            margin-bottom: 10px;
+        }
+
+        .hero p.sub {
+            font-size: 1.15em;
+            opacity: 0.95;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.22);
+            padding: 8px 25px;
+            border-radius: 50px;
+            margin-top: 20px;
+            font-size: 0.9em;
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255,255,255,0.35);
+        }
+
+        /* ===== المحتوى ===== */
+        .container {
+            max-width: 850px;
+            margin: -45px auto 60px;
+            padding: 0 20px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .card {
+            background: #fff;
+            border-radius: 25px;
+            padding: 35px 30px;
+            margin-bottom: 25px;
+            box-shadow: 0 10px 40px rgba(230, 81, 0, 0.08);
+            border: 1px solid rgba(255, 152, 0, 0.12);
+            transition: all 0.35s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0; right: 0;
+            width: 6px; height: 100%;
+            background: linear-gradient(180deg, #ff9800, #e65100);
+            border-radius: 0 25px 25px 0;
+        }
+
+        .card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 50px rgba(230, 81, 0, 0.16);
+        }
+
+        .card h2 {
+            color: #e65100;
+            font-size: 1.4em;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 18px;
+        }
+
+        .card h2 .icon {
+            background: linear-gradient(135deg, #ffe0b2, #ffcc80);
+            width: 52px; height: 52px;
+            display: inline-flex; align-items: center; justify-content: center;
+            border-radius: 16px;
+            font-size: 1.5em;
+            flex-shrink: 0;
+        }
+
+        .card ul { list-style: none; }
+
+        .card ul li {
+            padding: 10px 40px 10px 10px;
+            position: relative;
+            border-radius: 12px;
+            transition: background 0.25s;
+        }
+
+        .card ul li:hover { background: #fff8f0; }
+
+        .card ul li::before {
+            content: '✦';
+            position: absolute;
+            right: 12px;
+            color: #ff9800;
+            font-weight: 900;
+        }
+
+        .highlight {
+            background: linear-gradient(135deg, #fff3e0, #ffe0b2);
+            border-radius: 16px;
+            padding: 20px 25px;
+            border-right: 5px solid #ff9800;
+            margin: 15px 0;
+        }
+
+        .contact-box {
+            background: linear-gradient(135deg, #e65100, #ff9800);
+            color: #fff;
+            text-align: center;
+            border-radius: 25px;
+            padding: 40px 30px;
+            box-shadow: 0 15px 45px rgba(230, 81, 0, 0.3);
+        }
+
+        .contact-box h2 {
+            color: #fff;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .contact-box .chips {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            justify-content: center;
+        }
+
+        .chip {
+            background: rgba(255,255,255,0.2);
+            border: 1px solid rgba(255,255,255,0.4);
+            padding: 10px 22px;
+            border-radius: 50px;
+            font-weight: 600;
+            backdrop-filter: blur(6px);
+            transition: transform 0.25s;
+        }
+
+        .chip:hover { transform: scale(1.06); background: rgba(255,255,255,0.3); }
+        .chip a { color: #fff; text-decoration: none; }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 18px;
+        }
+
+        @media (max-width: 640px) {
+            .grid-2 { grid-template-columns: 1fr; }
+            .hero h1 { font-size: 1.9em; }
+        }
+
+        .mini-card {
+            background: #fff8f0;
+            border: 1px solid #ffe0b2;
+            border-radius: 16px;
+            padding: 18px 20px;
+            text-align: center;
+        }
+
+        .mini-card .num {
+            font-size: 2em;
+            font-weight: 900;
+            color: #e65100;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px 20px 45px;
+            color: #a05a1e;
+            font-size: 0.92em;
+        }
+
+        footer .heart { color: #e65100; }
+    </style>
+</head>
+<body>
+
+    <!-- ============ الهيدر ============ -->
+    <div class="hero">
+        <div class="cart-icon">🛒</div>
+        <h1>سياسة الخصوصية — اصرفلي</h1>
+        <p class="sub">شفافيتك أمانة عندنا. هذه الصفحة تشرح ببساطة ووضوح كيف نتعامل مع بياناتك ونحمي خصوصيتك</p>
+        <span class="badge">🗓️ آخر تحديث: 1 أكتوبر 2026</span>
+    </div>
+
+    <div class="container">
+
+        <!-- مقدمة -->
+        <div class="card">
+            <h2><span class="icon">👋</span> أهلاً بك في اصرفلي</h2>
+            <p>نحن نصمّم <strong>اصرفلي</strong> ليكون متجرك اليومي الموثوق — وهذا يشمل أن نكون شفافين تماماً بشأن بياناتك. باستخدامك التطبيق، فإنك توافق على هذه السياسة، ونتعهد بأن نتعامل مع معلوماتك <strong>بمسؤولية واحترام تامين</strong>.</p>
+        </div>
+
+        <!-- ما نجمعه -->
+        <div class="card">
+            <h2><span class="icon">📋</span> المعلومات التي نجمعها</h2>
+            <div class="grid-2">
+                <div class="mini-card"><div class="num">👤</div>الاسم وعنوان التوصيل</div>
+                <div class="mini-card"><div class="num">📱</div>رقم الهاتف — للتحقق والتوصيل</div>
+                <div class="mini-card"><div class="num">📦</div>تفاصيل طلباتك ومشترياتك</div>
+                <div class="mini-card"><div class="num">📧</div>البريد الإلكتروني — عند تسجيل الدخول</div>
+            </div>
+        </div>
+
+        <!-- ما لا نجمعه -->
+        <div class="card">
+            <h2><span class="icon">🛡️</span> وما لا نجمعه أبداً</h2>
+            <div class="highlight">
+                ❌ لا نجمع بيانات بطاقاتك المصرفية داخل التطبيق<br>
+                ❌ لا نبيع بياناتك لأي طرف ثالث — <strong>أبداً</strong><br>
+                ❌ لا نراقب موقعك الجغرافي دون حاجة التوصيل المباشرة
+            </div>
+        </div>
+
+        <!-- الاستخدام -->
+        <div class="card">
+            <h2><span class="icon">⚙️</span> كيف نستخدم معلوماتك</h2>
+            <ul>
+                <li>معالجة طلباتك وتوصيلها إلى بابك</li>
+                <li>التواصل معك بخصوص حالة الطلب</li>
+                <li>تحسين خدماتنا وتجربة تسوقك</li>
+                <li>حماية التطبيق ومنع الاحتيال</li>
+            </ul>
+        </div>
+
+        <!-- المشاركة -->
+        <div class="card">
+            <h2><span class="icon">🤝</span> مشاركة المعلومات</h2>
+            <p>لا نشارك بياناتك إلا في حالتين محددين فقط:</p>
+            <ul>
+                <li>بيانات التوصيل مع شركة التوصيل المعتمدة — وبالحد الأدنى اللازم</li>
+                <li>الامتثال للمتطلبات القانونية عند الطلب الرسمي</li>
+            </ul>
+        </div>
+
+        <!-- التخزين -->
+        <div class="card">
+            <h2><span class="icon">🔒</span> حماية وتخزين بياناتك</h2>
+            <p>تُخزّن بياناتك على <strong>خوادم آمنة معتمدة عالمياً</strong> تخضع لأعلى معايير الحماية والمراقبة المستمرة، وتنتقل بينك وبين التطبيق <strong>مشفّرة بالكامل (HTTPS/TLS)</strong> فلا يمكن لأي طرف اعتراضها أو الاطلاع عليها.</p>
+        </div>
+
+        <!-- حقوقك -->
+        <div class="card">
+            <h2><span class="icon">⚖️</span> حقوقك — كاملة ودائماً</h2>
+            <ul>
+                <li>طلب حذف حسابك وجميع بياناتك في أي وقت</li>
+                <li>تعديل معلوماتك من إعدادات الحساب</li>
+                <li>معرفة أي بيانات نخزنها عنك بمجرد طلبها</li>
+            </ul>
+            <div class="highlight">
+                💡 <strong>وعد حذف البيانات:</strong> بمجرد طلبك الحذف عبر البريد، نزيل بياناتك نهائياً خلال 30 يوماً كحد أقصى
+            </div>
+        </div>
+
+        <!-- تحديثات السياسة -->
+        <div class="card">
+            <h2><span class="icon">📜</span> تحديثات السياسة</h2>
+            <p>قد نحدّث هذه السياسة لتطوير خدماتنا — وسننشر أي تغيير هنا مع تحديث التاريخ، ونُبلغك بالتغييرات الجوهرية داخل التطبيق.</p>
+        </div>
+
+        <!-- التواصل -->
+        <div class="contact-box">
+            <h2><span class="icon" style="background:rgba(255,255,255,0.25)">💬</span> تواصل معنا في أي وقت</h2>
+            <p style="margin-bottom: 22px;">لديك سؤال عن الخصوصية؟ أو تريد حذف بياناتك؟ نحن هنا من أجلك</p>
+            <div class="chips">
+                <span class="chip">📧 <a href="mailto:asrafly.app@gmail.com">asrafly.app@gmail.com</a></span>
+                <span class="chip">📱 <span dir="ltr">+964 776 211 6799</span></span>
+                <span class="chip">🇮🇶 العراق</span>
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        صُنع بـ <span class="heart">❤</span> لعملاء اصرفلي — متجرك اليومي بكل سهولة
+    </footer>
+
+</body>
+</html>
